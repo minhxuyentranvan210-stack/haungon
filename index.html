@@ -4,167 +4,157 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Haungon Contact & Order</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-body {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  background: linear-gradient(120deg, #e0f7fa, #ffe0b2);
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-}
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background: linear-gradient(120deg, #e0f7fa, #ffe0b2);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
 
-.container {
-  max-width: 600px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
+  .container {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
 
-.contact-cards, .order-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  width: 100%;
-  justify-content: center;
-}
+  .contact-cards, .order-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+  }
 
-.contact-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 15px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  min-width: 180px;
-  text-align: center;
-  position: relative;
-  transition: transform 0.3s;
-}
+  .contact-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 180px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s;
+  }
 
-/* Neon border chính cho contact-card */
-.contact-card::before {
-  content: '';
-  position: absolute;
-  top: -2px; left: -2px; right: -2px; bottom: -2px;
-  border-radius: 20px;
-  padding: 2px;
-  background: linear-gradient(270deg, #00fff0, #ff00ff, #00ff40, #00fff0);
-  background-size: 600% 600%;
-  z-index: -1;
-  animation: neon-border 4s linear infinite;
-}
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(270deg, #00fff0, #ff00ff, #00ff40, #00fff0);
+    background-size: 600% 600%;
+    z-index: -1;
+    animation: neon-border 4s linear infinite;
+  }
 
-@keyframes neon-border {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+  @keyframes neon-border {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-.contact-info {
-  padding: 5px 10px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-}
+  .contact-info {
+    padding: 5px 10px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+  }
 
-/* Viền neon hover riêng cho contact-info */
-.contact-info::before {
-  content: '';
-  position: absolute;
-  top: -3px; left: -3px; right: -3px; bottom: -3px;
-  border-radius: 12px;
-  background: linear-gradient(270deg, #00fff0, #ff00ff, #00ff40, #00fff0);
-  background-size: 600% 600%;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
+  .contact-info::before {
+    content: '';
+    position: absolute;
+    top: -3px; left: -3px; right: -3px; bottom: -3px;
+    border-radius: 12px;
+    background: linear-gradient(270deg, #00fff0, #ff00ff, #00ff40, #00fff0);
+    background-size: 600% 600%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
 
-.contact-info:hover::before {
-  opacity: 1;
-  animation: neon-border 4s linear infinite;
-}
+  .contact-info:hover::before {
+    opacity: 1;
+    animation: neon-border 4s linear infinite;
+  }
 
-.neon {
-  transform: scale(1.05);
-}
+  .neon {
+    transform: scale(1.05);
+  }
 
-.order-form {
-  flex-direction: column;
-  max-width: 100%;
-  width: 100%;
-  background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+  .order-form {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
 
-.order-form label {
-  margin: 10px 0 5px;
-  font-weight: 600;
-}
+  .order-form label {
+    margin: 10px 0 5px;
+    font-weight: 600;
+  }
 
-.order-form input, .order-form select {
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  margin-bottom: 12px;
-  font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  width: 100%;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
-}
+  .order-form input, .order-form select {
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
 
-.order-form input.error, .order-form select.error {
-  border-color: red;
-}
+  .order-form input.error, .order-form select.error {
+    border-color: red;
+  }
 
-.order-form button {
-  background: #00bcd4;
-  color: #fff;
-  border: none;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  padding: 12px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;
-}
+  .order-form button {
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+  }
 
-.order-form button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #00fff0;
-}
+  .order-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00fff0;
+  }
 
-.footer {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #555;
-  text-align: center;
-}
+  .footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+  }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.error {
-  color: red;
-  font-size: 14px;
-  margin-top: -8px;
-  margin-bottom: 8px;
-}
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 </style>
 </head>
 <body>
@@ -208,16 +198,18 @@ a {
     <label for="type">Loại hàng:</label>
     <select id="type">
       <option value="">Chọn loại hàng</option>
-      <option value="1">1-3 con 1kg</option>
-      <option value="2">3-6 con 1kg</option>
-      <option value="3">7-9 con 1kg</option>
-      <option value="4">9-12 con 1kg</option>
-      <option value="5">13-16 con 1kg</option>
+      <option value="L1">L1 1-4 con 1kg</option>
+      <option value="L2">L2 4-6 con 1kg</option>
+      <option value="L3">L3 7-9 con 1kg</option>
+      <option value="L4">L4 9-12 con 1kg</option>
+      <option value="L5">L5 13-16 con 1kg</option>
+      <option value="L6">L6 xô 4-17 con 1kg</option>
+      <option value="L8">L7 nguyên dây</option>
     </select>
     <div id="typeError" class="error"></div>
 
     <button id="orderBtn">Đặt hàng qua Zalo</button>
-    <div id="noteBox" style="margin-top:10px; font-size:14px; color:#00897b;"></div>
+    <div id="noteBox" style="margin-top:10px;font-size:14px;color:#00897b;"></div>
 
     <div class="footer">© 2025 Hòa Phát và Hải Sản Bè. All rights reserved.</div>
   </section>
@@ -236,7 +228,7 @@ const nameError = document.getElementById('nameError');
 const phoneError = document.getElementById('phoneError');
 const typeError = document.getElementById('typeError');
 
-// Hover neon contact-info
+// Neon hover
 contactInfos.forEach(info => {
   info.addEventListener('mouseenter', () => info.classList.add('neon'));
   info.addEventListener('mouseleave', () => info.classList.remove('neon'));
@@ -281,7 +273,7 @@ function validateForm() {
   return valid;
 }
 
-// Copy vào clipboard
+// Copy text
 async function copyText(text) {
   try {
     await navigator.clipboard.writeText(text);
@@ -297,15 +289,15 @@ async function copyText(text) {
   }
 }
 
-// Xử lý đặt hàng
+// Order button click
 orderBtn.addEventListener('click', async () => {
   if(!validateForm()) return;
 
   const name = nameInput.value.trim();
   const phone = phoneInput.value.trim();
-  const type = typeSelect.value;
+  const typeText = typeSelect.options[typeSelect.selectedIndex].text;
 
-  const text = `Đơn đặt hàng\nThông tin khách hàng: ${name}\nSố điện thoại: ${phone}\nLoại hàng: ${type}`;
+  const text = `Đơn đặt hàng\nThông tin khách hàng: ${name}\nSố điện thoại: ${phone}\nLoại hàng: ${typeText}`;
 
   const copied = await copyText(text);
 

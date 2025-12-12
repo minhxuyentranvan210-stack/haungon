@@ -3,11 +3,12 @@
 <head>
     <link rel="icon" type="tin_tuc_bao_moi/png" href="favicon.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hải Sản Tươi Sống - Hàu Tươi Ngon Cao Cấp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>HẢI SẢN TƯƠI SỐNG - Hàu Tươi Ngon Đỉnh Cao</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ====== PHẦN CSS GỐC CỦA BẠN ====== */
         * {
             margin: 0;
             padding: 0;
@@ -95,13 +96,13 @@
             z-index: 1;
         }
 
-        /* Phần tiêu đề với hiệu ứng chữ */
+        /* Phần tiêu đề với hiệu ứng chữ - ĐÃ THÊM SLOGAN */
         .header {
             text-align: center;
             margin-bottom: 40px;
             width: 100%;
             position: relative;
-            padding: 20px;
+            padding: 25px 20px;
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -128,7 +129,7 @@
         .header h1 {
             font-size: 2.8rem;
             color: #2c3e50;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             background: linear-gradient(90deg, #FF512F, #DD2476, #FF512F);
             background-size: 200% auto;
@@ -138,6 +139,7 @@
             font-weight: 700;
             animation: textShine 3s ease-in-out infinite alternate;
             position: relative;
+            line-height: 1.2;
         }
 
         @keyframes textShine {
@@ -145,11 +147,55 @@
             100% { background-position: 200% center; }
         }
 
-        .header p {
+        /* SLOGAN CHẤT - PHẦN MỚI */
+        .slogan {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            display: inline-block;
+            border: 2px solid transparent;
+            animation: sloganGlow 3s infinite alternate;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes sloganGlow {
+            0% {
+                border-color: rgba(52, 152, 219, 0.5);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 10px rgba(52, 152, 219, 0.3);
+            }
+            100% {
+                border-color: rgba(46, 204, 113, 0.5);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 15px rgba(46, 204, 113, 0.4);
+            }
+        }
+
+        .slogan-text {
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .slogan .highlight {
+            color: #e74c3c;
+            font-weight: 800;
+            text-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+        }
+
+        /* Mô tả giới thiệu */
+        .intro-text {
             font-size: 1.2rem;
             color: #7f8c8d;
             max-width: 800px;
-            margin: 0 auto 20px;
+            margin: 0 auto 10px;
             line-height: 1.6;
         }
 
@@ -760,6 +806,7 @@
             align-items: center;
             justify-content: center;
             backdrop-filter: blur(5px);
+            padding: 20px;
         }
 
         .modal-content {
@@ -895,42 +942,291 @@
             background: linear-gradient(90deg, transparent, #3498db, transparent);
         }
 
-        /* Responsive */
+        /* ====== PHẦN CSS TỐI ƯU MOBILE ====== */
+        
         @media (max-width: 768px) {
-            .contact-bar {
-                flex-direction: column;
-                align-items: center;
+            html {
+                font-size: 14px;
             }
             
-            .contact-btn {
-                width: 100%;
-                max-width: 300px;
+            body {
+                padding: 10px;
+                touch-action: manipulation;
+                -webkit-overflow-scrolling: touch;
             }
             
-            .order-section {
-                padding: 30px;
+            .header {
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 15px;
             }
             
             .header h1 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+            
+            .slogan {
+                font-size: 1rem;
+                padding: 12px 20px;
+                margin-bottom: 15px;
+            }
+            
+            .intro-text {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+            
+            /* Thanh liên hệ mobile */
+            .contact-bar {
+                flex-direction: row;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                justify-content: flex-start;
+                gap: 10px;
+                padding: 10px 5px;
+                margin-bottom: 20px;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .contact-bar::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .contact-btn {
+                flex: 0 0 auto;
+                width: 130px;
+                min-width: 130px;
+                padding: 15px 10px;
+                border-radius: 12px;
+                scroll-snap-align: start;
+            }
+            
+            .contact-btn i {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+            }
+            
+            .contact-btn .btn-title {
+                font-size: 0.9rem;
+                margin-bottom: 3px;
+                text-align: center;
+            }
+            
+            .contact-btn .btn-subtitle {
+                font-size: 0.75rem;
+                text-align: center;
+            }
+            
+            /* Phần đặt hàng mobile */
+            .order-section {
+                padding: 20px;
+                border-radius: 15px;
+                margin-bottom: 25px;
+                max-width: 100%;
+            }
+            
+            .order-section h2 {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+            }
+            
+            .form-group {
+                margin-bottom: 18px;
+            }
+            
+            .form-group label {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+            }
+            
+            .form-control, .select-control {
+                padding: 14px 12px;
+                font-size: 1rem;
+                border-radius: 10px;
+            }
+            
+            .submit-btn {
+                padding: 18px;
+                font-size: 1.1rem;
+                border-radius: 12px;
+            }
+            
+            .submit-btn i {
+                margin-right: 8px;
+            }
+            
+            /* Phần đánh giá mobile */
+            .review-section {
+                margin: 30px 0;
+            }
+            
+            .review-section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .review-section h2::after {
+                width: 80px;
+                height: 3px;
+                bottom: -8px;
             }
             
             .review-cards {
                 flex-direction: column;
-                align-items: center;
+                gap: 20px;
+                margin-top: 15px;
             }
             
             .review-card {
+                padding: 25px 20px;
+                border-radius: 15px;
                 max-width: 100%;
             }
             
+            .review-icon {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .review-card h3 {
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+            }
+            
+            .review-card p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            .rating i {
+                font-size: 1.2rem;
+            }
+            
+            .review-stats {
+                font-size: 0.95rem;
+                margin-top: 15px;
+            }
+            
+            /* Modal mobile */
+            .modal {
+                padding: 15px;
+            }
+            
             .modal-content {
-                padding: 30px;
+                padding: 25px;
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .modal-content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .modal-content p {
+                font-size: 0.95rem;
+                margin-bottom: 15px;
+            }
+            
+            .modal-content .order-details {
+                padding: 15px;
+                font-size: 0.95rem;
             }
             
             .modal-btn {
-                margin: 10px 5px;
+                padding: 12px 20px;
+                font-size: 1rem;
+                margin: 5px 0;
                 width: 100%;
+            }
+            
+            .close-modal {
+                top: 10px;
+                right: 15px;
+                font-size: 1.5rem;
+                width: 35px;
+                height: 35px;
+            }
+            
+            /* Footer mobile */
+            .footer {
+                padding: 20px 0;
+                margin-top: 20px;
+            }
+            
+            .footer p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+        }
+        
+        @media (max-width: 768px) and (min-resolution: 150dpi) {
+            html {
+                font-size: 16px;
+            }
+            
+            .contact-btn, .form-control, .select-control, .submit-btn, .modal-btn {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .form-control, .select-control {
+                padding: 16px 14px;
+            }
+            
+            .contact-btn .btn-title {
+                font-size: 1rem;
+            }
+            
+            .contact-btn .btn-subtitle {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .contact-btn {
+                width: 120px;
+                min-width: 120px;
+                padding: 12px 8px;
+            }
+            
+            .contact-btn i {
+                font-size: 1.6rem;
+            }
+            
+            .contact-btn .btn-title {
+                font-size: 0.85rem;
+            }
+            
+            .contact-btn .btn-subtitle {
+                font-size: 0.7rem;
+            }
+            
+            .order-section {
+                padding: 15px;
+            }
+            
+            .review-card {
+                padding: 20px 15px;
+            }
+        }
+        
+        @supports (-webkit-touch-callout: none) {
+            .contact-bar {
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            input, select, textarea, button {
+                font-size: 16px;
             }
         }
     </style>
@@ -973,11 +1269,19 @@
             </a>
         </div>
 
-        <!-- Phần tiêu đề và giới thiệu -->
+        <!-- Phần tiêu đề và giới thiệu - ĐÃ THÊM SLOGAN -->
         <div class="header">
             <h1>HÀU TƯƠI NGON CAO CẤP</h1>
-            <p>Chúng tôi cung cấp <span class="highlight">hàu tươi sống</span> chất lượng cao, đánh bắt tự nhiên, đảm bảo an toàn vệ sinh thực phẩm. Hàu được bảo quản lạnh và vận chuyển nhanh chóng đến tay khách hàng.</p>
-            <p>Với nhiều kích cỡ khác nhau, phù hợp cho mọi nhu cầu từ gia đình đến nhà hàng, khách sạn.</p>
+            
+            <div class="slogan">
+                <span class="slogan-text">
+                    <span class="highlight">"HÀU TƯƠI SỐNG"</span> - Sự tinh tuý từ đại dương, 
+                    <span class="highlight">cam kết chất lượng đỉnh cao</span>
+                </span>
+            </div>
+            
+            <p class="intro-text">Chúng tôi cung cấp <span class="highlight">hàu tươi sống</span> chất lượng cao, đánh bắt tự nhiên, đảm bảo an toàn vệ sinh thực phẩm. Hàu được bảo quản lạnh và vận chuyển nhanh chóng đến tay khách hàng.</p>
+            <p class="intro-text">Với nhiều kích cỡ khác nhau, phù hợp cho mọi nhu cầu từ gia đình đến nhà hàng, khách sạn.</p>
         </div>
 
         <!-- Phần đặt hàng trực tiếp -->
@@ -1093,42 +1397,151 @@
     </div>
 
     <script>
-        // Tạo hiệu ứng hạt nền động
+        // ====== JAVASCRIPT TỐI ƯU CHO MOBILE ======
+        
+        // Tạo hiệu ứng hạt nền động (giảm số lượng cho mobile)
         function createParticles() {
             const container = document.getElementById('particles-container');
-            const particleCount = 50;
+            const particleCount = window.innerWidth < 768 ? 25 : 50;
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
-                // Kích thước ngẫu nhiên
-                const size = Math.random() * 10 + 5;
+                const size = Math.random() * 8 + 3;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 
-                // Vị trí ngẫu nhiên
                 particle.style.left = `${Math.random() * 100}%`;
                 
-                // Màu sắc ngẫu nhiên
                 const colors = [
-                    'rgba(255, 107, 107, 0.5)',
-                    'rgba(107, 185, 255, 0.5)',
-                    'rgba(255, 203, 107, 0.5)',
-                    'rgba(107, 255, 182, 0.5)',
-                    'rgba(182, 107, 255, 0.5)'
+                    'rgba(255, 107, 107, 0.3)',
+                    'rgba(107, 185, 255, 0.3)',
+                    'rgba(255, 203, 107, 0.3)'
                 ];
                 particle.style.background = colors[Math.floor(Math.random() * colors.length)];
                 
-                // Tốc độ và độ trễ ngẫu nhiên
-                const duration = Math.random() * 20 + 10;
-                const delay = Math.random() * 10;
+                const duration = Math.random() * 15 + 8;
+                const delay = Math.random() * 5;
                 particle.style.animationDuration = `${duration}s`;
                 particle.style.animationDelay = `${delay}s`;
                 
                 container.appendChild(particle);
             }
         }
+        
+        // Xử lý touch cho slider liên hệ trên mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        const contactBar = document.querySelector('.contact-bar');
+        if (contactBar && window.innerWidth < 768) {
+            contactBar.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            
+            contactBar.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+            
+            // Tắt hiệu ứng hover trên mobile
+            const contactButtons = document.querySelectorAll('.contact-btn');
+            contactButtons.forEach(btn => {
+                btn.style.cursor = 'pointer';
+            });
+        }
+        
+        function handleSwipe() {
+            const swipeThreshold = 30;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left
+                    contactBar.scrollBy({left: 150, behavior: 'smooth'});
+                } else {
+                    // Swipe right
+                    contactBar.scrollBy({left: -150, behavior: 'smooth'});
+                }
+            }
+        }
+        
+        // Tối ưu input trên mobile
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            // Thêm class cho iOS
+            if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+                input.classList.add('ios-input');
+            }
+            
+            // Ngăn zoom khi focus trên mobile
+            input.addEventListener('focus', function() {
+                if (window.innerWidth < 768) {
+                    setTimeout(() => {
+                        this.scrollIntoView({behavior: 'smooth', block: 'center'});
+                    }, 300);
+                }
+            });
+        });
+        
+        // Tối ưu click trên mobile
+        const buttons = document.querySelectorAll('button, .contact-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            }, {passive: true});
+            
+            btn.addEventListener('touchend', function() {
+                this.style.transform = '';
+            }, {passive: true});
+        });
+        
+        // Phát hiện thiết bị và áp dụng tối ưu
+        function applyMobileOptimizations() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            const isSmallScreen = window.innerWidth < 768;
+            
+            if (isMobile || isSmallScreen) {
+                // Thêm class mobile cho body
+                document.body.classList.add('mobile-device');
+                
+                // Tắt một số hiệu ứng để tăng hiệu suất
+                const elements = document.querySelectorAll('.contact-btn, .review-card, .submit-btn');
+                elements.forEach(el => {
+                    el.style.willChange = 'transform';
+                });
+                
+                // Giảm animation cho mobile
+                if (window.innerWidth < 768) {
+                    const style = document.createElement('style');
+                    style.innerHTML = `
+                        @media (max-width: 768px) {
+                            .particle {
+                                animation-duration: 20s !important;
+                            }
+                            
+                            .contact-btn:hover {
+                                transform: none !important;
+                            }
+                            
+                            .review-card:hover {
+                                transform: none !important;
+                            }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            }
+        }
+        
+        // Gọi các hàm tối ưu khi trang load
+        window.addEventListener('load', function() {
+            createParticles();
+            applyMobileOptimizations();
+        });
+        
+        // ====== PHẦN JAVASCRIPT GỐC ======
         
         // Xử lý form đặt hàng
         document.getElementById('order-form').addEventListener('submit', function(e) {
@@ -1366,7 +1779,7 @@
             });
         });
         
-        // Thêm icon Zalo (vì FontAwesome không có icon Zalo)
+        // Thêm icon Zalo
         const style = document.createElement('style');
         style.innerHTML = `
             .fa-zalo:before {
@@ -1375,7 +1788,6 @@
                 font-family: 'Roboto', sans-serif;
             }
             
-            /* Hiệu ứng loading cho spinner */
             .fa-spinner {
                 animation: spin 1s linear infinite;
             }
@@ -1384,11 +1796,18 @@
                 0% { transform: rotate(0deg); }
                 100% { transform: rotate(360deg); }
             }
+            
+            @supports (-webkit-touch-callout: none) {
+                .contact-bar {
+                    -webkit-overflow-scrolling: touch;
+                }
+                
+                input, select {
+                    font-size: 16px !important;
+                }
+            }
         `;
         document.head.appendChild(style);
-        
-        // Khởi tạo hiệu ứng hạt nền
-        createParticles();
     </script>
 </body>
 </html>
